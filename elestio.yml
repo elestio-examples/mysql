@@ -1,0 +1,22 @@
+ports:
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "443"
+    targetPort: "24581"
+    public: true
+    path: "/"
+    isAuth: true
+    login: "root"
+    password: "random_password"
+  - protocol: "TCP"
+    targetProtocol: "TCP"
+    listeningPort: "24306"
+    targetPort: "3306"
+    public: true
+    path: "/"
+    isAuth: false
+    login: ""
+    password: ""
+environments:
+  - key: "SOFTWARE_PASSWORD"
+    value: "random_password"
