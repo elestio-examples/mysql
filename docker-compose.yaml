@@ -1,7 +1,6 @@
 version: '3'
 services:
   mysql:
-    container_name: mysql
     image: mysql:8
     restart: always
     command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
@@ -14,7 +13,6 @@ services:
       - './sql:/docker-entrypoint-initdb.d'
   pma:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
     restart: always
     links:
       - mysql:mysql
