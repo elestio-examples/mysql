@@ -3,6 +3,7 @@ ports:
     targetProtocol: "HTTP"
     listeningPort: "443"
     targetPort: "24581"
+    targetIP: "172.17.0.1"
     public: true
     path: "/"
     isAuth: true
@@ -11,6 +12,7 @@ ports:
   - protocol: "TCP"
     targetProtocol: "TCP"
     listeningPort: "24306"
+    targetIP: "172.17.0.1"
     targetPort: "3306"
     public: true
     path: "/"
@@ -20,3 +22,10 @@ ports:
 environments:
   - key: "SOFTWARE_PASSWORD"
     value: "random_password"
+config:
+  runTime: "dockerCompose"
+  version: ""
+  framework: ""
+  buildCommand: "docker-compose build"
+  buildDir: "/"
+  runCommand: "docker-compose up -d"
