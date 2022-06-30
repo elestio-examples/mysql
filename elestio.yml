@@ -9,16 +9,6 @@ ports:
     isAuth: true
     login: "root"
     password: "random_password"
-  - protocol: "TCP"
-    targetProtocol: "TCP"
-    listeningPort: "24306"
-    targetIP: "172.17.0.1"
-    targetPort: "3306"
-    public: true
-    path: "/"
-    isAuth: false
-    login: ""
-    password: ""
 environments:
   - key: "SOFTWARE_PASSWORD"
     value: "random_password"
@@ -29,3 +19,10 @@ config:
   buildCommand: "docker-compose build"
   buildDir: "/"
   runCommand: "docker-compose up -d"
+lifeCycleConfig:
+  preInstallCommand: "./scripts/preInstall.sh"
+  postInstallCommand: "./scripts/postInstall.sh"
+  preBackupCommand: "./scripts/preBackup.sh"
+  postBackupCommand: "./scripts/postBackup.sh"
+  preRestoreCommand: "./scripts/preRestore.sh"
+  postRestoreCommand: "./scripts/postRestore.sh"
