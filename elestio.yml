@@ -16,6 +16,8 @@ ports:
     targetPort: "3306"
     public: true
 environments:
+  - key: "SOFTWARE_VERSION_TAG"
+    value: "latest"
   - key: "SOFTWARE_PASSWORD"
     value: "random_password"
 config:
