@@ -23,6 +23,7 @@ services:
       PMA_PORT: 3306
       PMA_USER: root
       PMA_PASSWORD: ${SOFTWARE_PASSWORD}
+      UPLOAD_LIMIT: 500M
       MYSQL_USERNAME: root
       MYSQL_ROOT_PASSWORD: ${SOFTWARE_PASSWORD}
     depends_on:
