@@ -12,7 +12,7 @@ services:
       - ./data:/var/lib/mysql
 
   pma:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin
     restart: always
     links:
       - mysql:mysql
