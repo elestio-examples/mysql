@@ -80,7 +80,7 @@ Here are some example snippets to help you get started creating a container.
 |       Variable       | Value (example) |
 | :------------------: | :-------------: |
 |  SOFTWARE_PASSWORD   |  your-password  |
-| SOFTWARE_VERSION_TAG |    5.7 or 8     |
+| SOFTWARE_VERSION_TAG |        8        |
 
 # Maintenance
 
