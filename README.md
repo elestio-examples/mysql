@@ -17,7 +17,7 @@ You can connect to your server with any MySQL client with those credentials:
 
 You can connect to your DB through PHPMyAdmin:
 
-    https://[CI_CD_DOMAIN]/
+    https://[CI_CD_DOMAIN]:24580/
     Login: root
     Password: [SOFTWARE_PASSWORD]
 
