@@ -20,6 +20,8 @@ environments:
     value: "latest"
   - key: "SOFTWARE_PASSWORD"
     value: "random_password"
+  - key: "CLUSTER_OPTIONS"
+    value: ""    
 config:
   runTime: "dockerCompose"
   version: ""
