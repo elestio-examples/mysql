@@ -1,5 +1,8 @@
+#set env vars
+set -o allexport; source .env; set +o allexport;
+
 #write cli helper
-echo "docker exec -it mysql mysql --host=172.17.0.1 --port=$NETPORT --user=root --password=${SOFTWARE_PASSWORD}" > mysql-docker-cli.sh;
+echo "docker exec -it mysql mysql --host=172.17.0.1 --port=24306 --user=root --password=${SOFTWARE_PASSWORD}" > mysql-docker-cli.sh;
 chmod +x mysql-docker-cli.sh;
 
 #create backup folder
