@@ -1,11 +1,6 @@
 #set env vars
 set -o allexport; source .env; set +o allexport;
 
-docker-compose down
-openssl req -new -x509 -days 3650 -nodes -text -out ./data/server-cert.pem -keyout ./data/server-key.pem -subj "/CN=mysql-u16.vm.elestio.app"
-sleep 5s;
-sed -i 's/#--ssl/--ssl/' docker-compose.yml
-
 #write cli helper
 echo "docker exec -it mysql mysql --host=172.17.0.1 --port=24306 --user=root --password=${SOFTWARE_PASSWORD}" > mysql-docker-cli.sh;
 chmod +x mysql-docker-cli.sh;
@@ -28,5 +23,9 @@ fi
 EOF
 chmod +x restoreDB-Dump.sh;
 
-
+sleep 25s;
+docker-compose down
+openssl req -new -x509 -days 3650 -nodes -text -out ./data/server-cert.pem -keyout ./data/server-key.pem -subj "/CN=mysql-u16.vm.elestio.app"
+sleep 5s;
+sed -i 's/#--ssl/--ssl/' docker-compose.yml
 docker-compose up -d;
