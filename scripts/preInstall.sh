@@ -4,3 +4,4 @@ NETPORT=24306; #instead of 3306
 DBPATH=./data; #$PWD/data
 
 mkdir -p ./{data,sql}
+chown -R 1001:1001 ./data;

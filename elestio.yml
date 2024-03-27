@@ -21,7 +21,9 @@ environments:
   - key: "SOFTWARE_PASSWORD"
     value: "random_password"
   - key: "CLUSTER_OPTIONS"
-    value: ""    
+    value: ""
+  - key: "CNAME"
+    value: "[CI_CD_DOMAIN]"
 config:
   runTime: "dockerCompose"
   version: ""
