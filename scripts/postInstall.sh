@@ -25,7 +25,7 @@ chmod +x restoreDB-Dump.sh;
 
 sleep 25s;
 docker-compose down
-openssl req -new -x509 -days 3650 -nodes -text -out ./data/server-cert.pem -keyout ./data/server-key.pem -subj "/CN=mysql-u16.vm.elestio.app"
+openssl req -new -x509 -days 3650 -nodes -text -out ./data/server-cert.pem -keyout ./data/server-key.pem -subj "/CN=${CNAME}"
 sleep 5s;
 sed -i 's/#--ssl/--ssl/' docker-compose.yml
 docker-compose up -d;
