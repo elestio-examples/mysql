@@ -14,11 +14,11 @@ chmod +x backupDB.sh;
 
 #write restore from dump helper
 cat > restoreDB-Dump.sh << EOT
-if [ -z "$1" ]
+if [ -z "\$1" ]
  then
 echo "You must pass 1 parameter: full path to your SQL backup to restore"
  else
-gunzip < $1 | docker-compose exec -T mysql /usr/bin/mysql --binary-mode --user=root --password=${SOFTWARE_PASSWORD}
+gunzip < \$1 | docker-compose exec -T mysql /usr/bin/mysql --binary-mode --user=root --password=${SOFTWARE_PASSWORD}
 fi
 EOT
 chmod +x restoreDB-Dump.sh;
