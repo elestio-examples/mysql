@@ -9,7 +9,7 @@ chmod +x mysql-docker-cli.sh;
 mkdir -p /opt/app-backups
 
 #write backup helper
-echo "docker-compose exec mysql /usr/bin/mysqldump --no-tablespaces --set-gtid-purged=OFF --user=root --password=${SOFTWARE_PASSWORD} --all-databases | gzip > /opt/app-backups/DB_\$(date +%Y-%m-%d-%H.%M.%S).sql.gz" > backupDB.sh;
+echo "docker-compose exec mysql /usr/bin/mysqldump --no-tablespaces --set-gtid-purged=OFF --user=root --password=${SOFTWARE_PASSWORD} --all-databases --triggers --routines --events --single-transaction | gzip > /opt/app-backups/DB_\$(date +%Y-%m-%d-%H.%M.%S).sql.gz" > backupDB.sh;
 chmod +x backupDB.sh;
 
 #write restore from dump helper
