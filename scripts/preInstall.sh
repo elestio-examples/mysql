@@ -5,6 +5,8 @@ NETFACE=0.0.0.0; #172.17.0.1
 NETPORT=24306; #instead of 3306
 DBPATH=./data; #$PWD/data
 
+echo "pre-install running";
+
 mkdir -p ./{data,sql}
 chown -R 1001:1001 ./data;
 
