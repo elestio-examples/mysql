@@ -9,13 +9,18 @@ echo "pre-install running";
 
 mkdir -p ./{data,sql}
 chown -R 1001:1001 ./data;
+IS_SSL_COMMAND=""
 
 sleep 10s;
-if [[ "$SOFTWARE_VERSION_TAG" != "latest" && "$SOFTWARE_VERSION_TAG" != "8.0" ]]; then
+if [[ "$SOFTWARE_VERSION_TAG" == "latest" || "$SOFTWARE_VERSION_TAG" == "8.0" ]]; then
   # Debug to check if the SOFTWARE_VERSION_TAG is correct
-  echo "SOFTWARE_VERSION_TAG: $SOFTWARE_VERSION_TAG"
+  IS_SSL_COMMAND="--ssl=1"
   
   # Use sed to remove '--ssl=1' from the docker-compose file
-  sed -i 's/ --ssl=1//g' ./docker-compose.yml
+#   sed -i 's/ --ssl=1//g' ./docker-compose.yml
 fi
 
+cat << EOT >> ./.env
+
+IS_SSL_COMMAND=${IS_SSL_COMMAND}
+EOT

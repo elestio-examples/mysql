@@ -27,5 +27,5 @@ sleep 25s;
 docker-compose down
 openssl req -new -x509 -days 3650 -nodes -text -out ./data/server-cert.pem -keyout ./data/server-key.pem -subj "/CN=${CNAME}"
 sleep 5s;
-sed -i 's/##//' docker-compose.yml
+sed -i 's/##//g' docker-compose.yml
 docker-compose up -d;
