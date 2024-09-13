@@ -3,7 +3,7 @@ services:
   mysql:
     image: elestio/mysql:${SOFTWARE_VERSION_TAG}
     restart: always
-    #command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max_connections=1000 --gtid-mode=ON --enforce-gtid-consistency=ON ${CLUSTER_OPTIONS} #--ssl=1 --ssl-cert=/var/lib/mysql/server-cert.pem --ssl-key=/var/lib/mysql/server-key.pem
+    #command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max_connections=1000 --gtid-mode=ON --enforce-gtid-consistency=ON ${CLUSTER_OPTIONS} ##--ssl=1 --ssl-cert=/var/lib/mysql/server-cert.pem --ssl-key=/var/lib/mysql/server-key.pem
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max_connections=1000 --gtid-mode=ON --enforce-gtid-consistency=ON ${CLUSTER_OPTIONS} ##--ssl=1 --ssl-cert=/var/lib/mysql/server-cert.pem --ssl-key=/var/lib/mysql/server-key.pem
     environment:
       MYSQL_ROOT_PASSWORD: ${SOFTWARE_PASSWORD}
