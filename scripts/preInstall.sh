@@ -8,6 +8,7 @@ DBPATH=./data; #$PWD/data
 mkdir -p ./{data,sql}
 chown -R 1001:1001 ./data;
 
+sleep 10s;
 if [[ "$SOFTWARE_VERSION_TAG" != "latest" && "$SOFTWARE_VERSION_TAG" != "8.0" ]]; then
   # Use sed to remove '--ssl=1' from the docker-compose file
   sed -i 's/--ssl=1//g' ./docker-compose.yml
