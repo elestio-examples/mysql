@@ -16,6 +16,6 @@ if [[ "$SOFTWARE_VERSION_TAG" != "latest" && "$SOFTWARE_VERSION_TAG" != "8.0" ]]
   echo "SOFTWARE_VERSION_TAG: $SOFTWARE_VERSION_TAG"
   
   # Use sed to remove '--ssl=1' from the docker-compose file
-  sed -i '/--ssl=1/d' ./docker-compose.yml
+  sed -i 's/ --ssl=1//g' ./docker-compose.yml
 fi
 
