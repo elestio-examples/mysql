@@ -12,6 +12,10 @@ chown -R 1001:1001 ./data;
 
 sleep 10s;
 if [[ "$SOFTWARE_VERSION_TAG" != "latest" && "$SOFTWARE_VERSION_TAG" != "8.0" ]]; then
+  # Debug to check if the SOFTWARE_VERSION_TAG is correct
+  echo "SOFTWARE_VERSION_TAG: $SOFTWARE_VERSION_TAG"
+  
   # Use sed to remove '--ssl=1' from the docker-compose file
-  sed -i 's/--ssl=1//g' ./docker-compose.yml
+  sed -i '/--ssl=1/d' ./docker-compose.yml
 fi
+
